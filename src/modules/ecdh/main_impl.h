@@ -10,7 +10,9 @@
 #include "include/secp256k1_ecdh.h"
 #include "ecmult_const_impl.h"
 
-int secp256k1_ecdh(const secp256k1_context* ctx, unsigned char *result, const secp256k1_pubkey *point, const unsigned char *scalar) {
+int secp256k1_ecdh(const secp256k1_context* ctx, unsigned char *result, const secp256k1_pubkey *point, const unsigned char *scalar, secp256k1_ecdh_hash_function hashfp, void *data) {
+    (void)hashfp;
+    (void)data;
     int ret = 0;
     int overflow = 0;
     secp256k1_gej res;
